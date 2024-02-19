@@ -2,7 +2,7 @@
 import pygame
 
 class coin(object): #COIN CLASS
-    coin_frames = [pygame.image.load(f'coins/coins{i}.png') for i in range(1, 7)] # Load all coin frames
+    coin_frames = [pygame.image.load(f'assets/coins/coins{i}.png') for i in range(1, 7)] # Load all coin frames
     coin_frames = [pygame.transform.smoothscale(frame, (50, 50)) for frame in coin_frames] # Resize all frames
 
     def __init__(self, x, y):

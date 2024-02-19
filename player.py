@@ -1,12 +1,12 @@
 import pygame
 
-char = pygame.image.load('FINN.png')
+char = pygame.image.load('assets/FINN.png')
 
-walkRight = [pygame.image.load(f'move-sideways/R{i}.png') for i in range(1, 10)]
+walkRight = [pygame.image.load(f'assets/move-sideways/R{i}.png') for i in range(1, 10)]
 walkLeft = [pygame.transform.flip(img, True, False) for img in walkRight]
 
-walkUp = [pygame.image.load(f'move-up/U{i}.png') for i in range(1, 10)]
-walkDown = [pygame.image.load(f'move-down/D{i}.png') for i in range(1, 10)]
+walkUp = [pygame.image.load(f'assets/move-up/U{i}.png') for i in range(1, 10)]
+walkDown = [pygame.image.load(f'assets/move-down/D{i}.png') for i in range(1, 10)]
 
 class player(object): #PLAYER CLASS
     def __init__(self,x,y,width,height):

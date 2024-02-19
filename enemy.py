@@ -2,7 +2,7 @@
 import pygame
 
 class enemy(object): #ENEMY CLASS
-    enemyimg = pygame.image.load('enemies/enemy.png') #LOADS ENEMY IMG
+    enemyimg = pygame.image.load('assets/enemies/enemy.png') #LOADS ENEMY IMG
     enemyimg = pygame.transform.smoothscale(enemyimg, (80, 60)) #RESIZES ENEMY IMG
 
     def __init__(self, x, y, width, height, end):

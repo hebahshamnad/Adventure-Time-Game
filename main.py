@@ -10,15 +10,15 @@ pygame.display.set_caption("Adventure Time Game")
 #------------------------------------
 #ALL IMAGES USED IN GAME
 
-bg = pygame.image.load('bg-elements/BG1.jpg')
-bg2 = pygame.image.load('bg-elements/START.jpeg')
-bg3 = pygame.image.load('bg-elements/LEVEL2.png')
-bg4 = pygame.image.load('bg-elements/LEVEL2SCREEN.png')
-bg5 = pygame.image.load('bg-elements/GAMEWIN.jpg')
-bg6 = pygame.image.load('bg-elements/GAMEOVER.jpg')
+bg = pygame.image.load('assets/bg-elements/BG1.jpg')
+bg2 = pygame.image.load('assets/bg-elements/START.jpeg')
+bg3 = pygame.image.load('assets/bg-elements/LEVEL2.png')
+bg4 = pygame.image.load('assets/bg-elements/LEVEL2SCREEN.png')
+bg5 = pygame.image.load('assets/bg-elements/GAMEWIN.jpg')
+bg6 = pygame.image.load('assets/bg-elements/GAMEOVER.jpg')
 
-scoreboard= pygame.image.load('bg-elements/scoreboard.png')
-heartboard=pygame.image.load('bg-elements/heartboard.png')
+scoreboard= pygame.image.load('assets/bg-elements/scoreboard.png')
+heartboard=pygame.image.load('assets/bg-elements/heartboard.png')
 
 #---------------------------------------------
 
@@ -42,7 +42,7 @@ def Level1GameWindow(): #FUNCTION TO DISPLAY LEVEL 1 GAME WINDOW
     
     win.blit(scoreboard, (5, 10))  # Adjust position as needed
     finalscore = score.render(("{0}".format(scorecount)), True,(0, 0, 0))
-    win.blit(finalscore, (80,22))
+    win.blit(finalscore, (75,22))
 
     
     win.blit(heartboard, (255, 10))  # Adjust position as needed
@@ -63,7 +63,7 @@ def Level2GameWindow(): #FUNCTION TO DISPLAY LEVEL 2 GAME WINDOW
 
     win.blit(scoreboard, (5, 10))  # Adjust position as needed
     finalscore = score.render(("{0}".format(scorecount)), True,(0, 0, 0))
-    win.blit(finalscore, (80,22))
+    win.blit(finalscore, (75,22))
 
     
     win.blit(heartboard, (255, 10))  # Adjust position as needed
@@ -251,7 +251,7 @@ while GAMEOVER:
     win.blit(bg6, (0,0))
     score = pygame.font.Font(None, 60)
     finalscore = score.render(("FINAL SCORE: {0}".format(scorecount)), True,(255, 255, 255),(0, 0, 0))
-    win.blit(finalscore, (210,520)) #DISPLAYS FINAL SCORE  
+    win.blit(finalscore, (190,520)) #DISPLAYS FINAL SCORE  
     pygame.display.update()
 
 pygame.quit()

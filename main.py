@@ -10,23 +10,22 @@ pygame.display.set_caption("Adventure Time Game")
 #------------------------------------
 #ALL IMAGES USED IN GAME
 
+bg = pygame.image.load('bg-elements/BG1.jpg')
+bg2 = pygame.image.load('bg-elements/START.jpeg')
+bg3 = pygame.image.load('bg-elements/LEVEL2.png')
+bg4 = pygame.image.load('bg-elements/LEVEL2SCREEN.png')
+bg5 = pygame.image.load('bg-elements/GAMEWIN.jpg')
+bg6 = pygame.image.load('bg-elements/GAMEOVER.jpg')
 
-bg = pygame.image.load('backgrounds/BG1.jpg')
-bg2 = pygame.image.load('backgrounds/START.jpeg')
-bg3 = pygame.image.load('backgrounds/LEVEL2.png')
-bg4 = pygame.image.load('backgrounds/LEVEL2SCREEN.png')
-bg5 = pygame.image.load('backgrounds/GAMEWIN.jpg')
-bg6 = pygame.image.load('backgrounds/GAMEOVER.jpg')
-
+scoreboard= pygame.image.load('bg-elements/scoreboard.png')
+heartboard=pygame.image.load('bg-elements/heartboard.png')
 
 #---------------------------------------------
 
 clock = pygame.time.Clock()
 
-
-
-score = pygame.font.SysFont('arial',40,True) 
-
+score = pygame.font.SysFont('fixedsys', 40)
+heart= pygame.font.SysFont('fixedsys', 40)
 scorecount = 0 #SCORE COUNTER
 
 def Level1GameWindow(): #FUNCTION TO DISPLAY LEVEL 1 GAME WINDOW
@@ -38,9 +37,17 @@ def Level1GameWindow(): #FUNCTION TO DISPLAY LEVEL 1 GAME WINDOW
 
     for h in henchmenlist:
         h.draw(win)
+       
+    
+    
+    win.blit(scoreboard, (5, 10))  # Adjust position as needed
+    finalscore = score.render(("{0}".format(scorecount)), True,(0, 0, 0))
+    win.blit(finalscore, (80,22))
 
-    finalscore = score.render((" SCORE: {0} ".format(scorecount)), True,(255, 255, 255),(0, 0, 0))
-    win.blit(finalscore, (20,0)) 
+    
+    win.blit(heartboard, (255, 10))  # Adjust position as needed
+    heartscore= heart.render(("{0}".format(3-EnemyCollisionCount)), True,(0, 0, 0)) 
+    win.blit(heartscore,(330,22))
     pygame.display.update()
 
 
@@ -54,8 +61,14 @@ def Level2GameWindow(): #FUNCTION TO DISPLAY LEVEL 2 GAME WINDOW
     for h in newhenchmenlist:
         h.draw(win)
 
-    finalscore = score.render((" SCORE: {0} ".format(scorecount)), True,(255, 255, 255),(0, 0, 0))
-    win.blit(finalscore, (20,0)) 
+    win.blit(scoreboard, (5, 10))  # Adjust position as needed
+    finalscore = score.render(("{0}".format(scorecount)), True,(0, 0, 0))
+    win.blit(finalscore, (80,22))
+
+    
+    win.blit(heartboard, (255, 10))  # Adjust position as needed
+    heartscore= heart.render(("{0}".format(3-EnemyCollisionCount)), True,(0, 0, 0)) 
+    win.blit(heartscore,(330,22))
     pygame.display.update()
 
 #---------------------------------------------------------

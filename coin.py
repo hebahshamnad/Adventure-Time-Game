@@ -9,9 +9,7 @@ class coin(object): #COIN CLASS
         self.x = x
         self.y = y
         self.frame_index = 0 # Index to keep track of which frame to display
-        self.frame_delay = 2 # Delay between frame changes
         self.frame_count = 0 # Counter to keep track of frames
-        self.speed = 0.5
         self.hitbox = pygame.Rect(self.x, self.y, 50, 50)
 
     def draw(self, win): #COIN APPEARANCE
@@ -19,7 +17,7 @@ class coin(object): #COIN CLASS
         self.frame_count += 1
 
         # Draw the current frame if enough frames have passed
-        if self.frame_count >= self.frame_delay:
+        if self.frame_count >= 0:
             # Draw the current frame
             win.blit(self.coin_frames[self.frame_index], (self.x, self.y))
 

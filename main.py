@@ -238,20 +238,24 @@ while run:
         man.standing = True
         man.walkCount = 0
 
+def display_final_screen(bg_image, message):  # New function to display final screen
+    while True:
+        for event in pygame.event.get():  # Check for events
+            if event.type == pygame.QUIT:  # Allow closing the window
+                pygame.quit()
+                exit()
+        win.blit(bg_image, (0, 0))
+        score = pygame.font.Font(None, 60)
+        finalscore = score.render(message, True, (255, 255, 255), (0, 0, 0))
+        win.blit(finalscore, (190, 520))  # DISPLAYS FINAL SCORE
+        pygame.display.update()
+
 #IF USER WINS
-while GAMEWIN:
-    win.blit(bg5, (0,0))
-    score = pygame.font.Font(None, 60)
-    finalscore = score.render(("FINAL SCORE: {0}".format(scorecount)), True,(255, 255, 255),(0, 0, 0))
-    win.blit(finalscore, (190,520))   #DISPLAYS FINAL SCORE
-    pygame.display.update()
+if GAMEWIN:
+    display_final_screen(bg5, "FINAL SCORE: {0}".format(scorecount))  # Call new function
 
 #IF USER LOSES
-while GAMEOVER:
-    win.blit(bg6, (0,0))
-    score = pygame.font.Font(None, 60)
-    finalscore = score.render(("FINAL SCORE: {0}".format(scorecount)), True,(255, 255, 255),(0, 0, 0))
-    win.blit(finalscore, (190,520)) #DISPLAYS FINAL SCORE  
-    pygame.display.update()
+if GAMEOVER:
+    display_final_screen(bg6, "FINAL SCORE: {0}".format(scorecount))  # Call new function
 
 pygame.quit()

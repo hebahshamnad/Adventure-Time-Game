@@ -2,8 +2,8 @@
 import pygame
 
 class enemy(object): #ENEMY CLASS
-    enemyimg = pygame.image.load('assets/enemies/enemy.png') #LOADS ENEMY IMG
-    enemyimg = pygame.transform.smoothscale(enemyimg, (80, 60)) #RESIZES ENEMY IMG
+    enemyimg = pygame.image.load('assets/enemies/enemy.png') 
+    enemyimg = pygame.transform.smoothscale(enemyimg, (80, 60)) 
 
     def __init__(self, x, y, width, height, end):
         self.x = x
@@ -16,7 +16,7 @@ class enemy(object): #ENEMY CLASS
         
         self.hitbox = (self.x, self.y, 80, 60)
 
-    def draw(self, win): #APPEARANCE
+    def draw(self, win): 
         self.move()
         if self.walkCount + 1 >= 33:
             self.walkCount = 0
@@ -25,9 +25,8 @@ class enemy(object): #ENEMY CLASS
         self.walkCount += 1
         
         self.hitbox = (self.x, self.y, 80, 60)
-        #pygame.draw.rect(win, (255,0,0), self.hitbox,2)
 
-    def move(self): #MOVEMENT
+    def move(self): 
         if self.speed > 0:
             if self.x + self.speed < self.path[1]:
                 self.x += self.speed
@@ -41,8 +40,8 @@ class enemy(object): #ENEMY CLASS
                 self.speed = self.speed * -1
                 self.walkCount = 0
 
-    def hit(self): #MAKE ENEMIES DISAPPEAR AFTER LVL 1 ENDS
-        self.x =-99095
-        self.y =-898875
+    def hit(self): 
+        self.x =-99999
+        self.y =-99999
         self.walkCount = 0
         pygame.display.update()
